@@ -1,21 +1,86 @@
-import {
-  ArrowRight,
-  ExternalLink,
-  ExternalLinkIcon,
-  Github,
-} from "lucide-react";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import project_images from "../project_images";
 import React from "react";
 
 const projects = [
   {
     id: 1,
-    title: "notepad",
-    description: "a notepad using mern",
-    //    image: "/projects/project1.png"
-    image: "",
-    tags: ["React", "TailwindCSS"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "ZhengPad",
+    description:
+      "To learn the widely accepted MERN stack, I built this notepad",
+    image: project_images.zhengpad,
+    tags: [
+      "React",
+      "TailwindCSS",
+      "NodeJS",
+      "MongoDB",
+      "ExpressJS",
+      "REST API",
+      "Vite",
+      "Axios",
+    ],
+    demoUrl: "https://mern-notepad-n6a1.onrender.com/",
+    githubUrl: "https://github.com/ozheng7/mern-notepad",
+  },
+  {
+    id: 2,
+    title: "Ember Eats",
+    description: "To dive in the endless tunnel of vide-coding",
+    image: project_images.emberEats,
+    tags: [
+      "React",
+      "Firebase Auth",
+      "Firestore",
+      "Firebase Storage",
+      "TailwindCSS",
+      "CRUD",
+    ],
+    demoUrl: "https://studio--ember-eats-wbq7g.us-central1.hosted.app/",
+    githubUrl: "https://studio--ember-eats-wbq7g.us-central1.hosted.app/",
+  },
+  {
+    id: 3,
+    title: "Predictive Modeling of Video Game Sales",
+    description:
+      "Using Data Science to predict the sales of video games given their attributes",
+    image: project_images.videogamesales,
+    tags: [
+      "Pandas",
+      "Seaborn",
+      "Scikit-learn",
+      "Predictive Modeling",
+      "Data Analysis",
+    ],
+    demoUrl:
+      "https://github.com/ozheng7/video-game-sales-prediction/blob/main/FinalProject_Group128_WI25.ipynb",
+    githubUrl: "https://github.com/ozheng7/video-game-sales-prediction/",
+  },
+  {
+    id: 4,
+    title: "Custom 9-Bit ISA Design",
+    description:
+      "Designed and implemented a 9-bit ISA processor with hardware, control logic, and test assembly programs",
+    image: project_images.nineBitISA,
+    tags: [
+      "SystemVerilog",
+      "Processor Design",
+      "Digital Logic",
+      "ModelSim",
+      "Assembly",
+    ],
+    demoUrl:
+      "https://github.com/ChrisEdwardsCSE/CSE141L-ISA/blob/main/assets/Datapath-Annotations.jpg",
+    githubUrl: "https://github.com/ChrisEdwardsCSE/CSE141L-ISA",
+  },
+  {
+    id: 5,
+    title: "Pantry Pal",
+    description:
+      "Built a full-stack Java app with JavaFX, MongoDB, and GPT-4/Whisper-powered recipe generation",
+    image: project_images.notFound,
+    tags: ["Java", "JavaFX", "MongoDB", "GPT-4", "Whisper", "Agile"],
+    demoUrl: "https://github.com/ozheng7/pantry-pal",
+    githubUrl: "https://github.com/ozheng7/pantry-pal",
   },
 ];
 

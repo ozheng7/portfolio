@@ -1,7 +1,24 @@
-import { Briefcase, Code, User } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import images from "../slideshow_images";
+import { motion, AnimatePresence } from "framer-motion";
 
 const AboutSection = () => {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <section id="about" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
@@ -9,6 +26,7 @@ const AboutSection = () => {
           About <span className="text-primary"> Me</span>
         </h2>
 
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"> */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
@@ -32,7 +50,8 @@ const AboutSection = () => {
               </a>
 
               <a
-                href="#resume"
+                href="/portfolio/resume.pdf"
+                download="Oscar_Zheng_Resume.pdf"
                 className="px-6 py-2 rounded-full border border-primay text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download Resume
@@ -40,52 +59,20 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6">
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Code className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">
-                    Full Stack Development
-                  </h4>
-                  <p className="text-muted-foreground">
-                    Creating full stack scalable applications with MERN stack
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <User className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">
-                    Full Stack Development
-                  </h4>
-                  <p className="text-muted-foreground">
-                    Creating full stack scalable applications with MERN stack
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Briefcase className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">
-                    Full Stack Development
-                  </h4>
-                  <p className="text-muted-foreground">
-                    Creating full stack scalable applications with MERN stack
-                  </p>
-                </div>
-              </div>
-            </div>
+          {/* Right column: slideshow */}
+          <div className="relative w-full h-128 rounded-2xl overflow-hidden shadow-lg">
+            <AnimatePresence>
+              <motion.img
+                key={index}
+                src={images[index]}
+                alt="slideshow"
+                className="absolute w-full h-full object-cover"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 2, ease: "easeInOut" }}
+              />
+            </AnimatePresence>
           </div>
         </div>
       </div>
