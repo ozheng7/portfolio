@@ -7,7 +7,7 @@ const projects = [
     id: 1,
     title: "ZhengPad",
     description:
-      "To learn the widely accepted MERN stack, I built this notepad",
+      "Created full-stack notepad with MongoDB, Express, React, and NodeJS",
     image: project_images.zhengpad,
     tags: [
       "React",
@@ -25,7 +25,7 @@ const projects = [
   {
     id: 2,
     title: "Ember Eats",
-    description: "To dive in the endless tunnel of vide-coding",
+    description: "Created full stack app with FireBase that supports Authentication, Storage, and a pleasing UI",
     image: project_images.emberEats,
     tags: [
       "React",
